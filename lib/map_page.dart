@@ -53,6 +53,12 @@ class _MapPageState extends State<MapPage> {
     }
   }
 
+  Future<Position> getPermission() async {
+    if (!await Geolocator.isLocationServiceEnabled()) {
+      throw "Layanan lokasi belum aktif";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
