@@ -74,5 +74,15 @@ class _MapPageState extends State<MapPage> {
       lating.longitude,
     );
     final p = placemarks.first;
+    setState(() {
+      _pickedMarker = Marker(
+        markerId: const MarkerId("picked"),
+        position: lating,
+        infoWindow: InfoWindow(
+          title: p.name?.isNotEmpty == true ? p.name : "Alamat Dipilih",
+          snippet: '${p.street}, ${p.locality}',
+        )
+      );
+    });
   }
 }
