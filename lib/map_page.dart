@@ -68,7 +68,7 @@ class _MapPageState extends State<MapPage> {
     return await Geolocator.getCurrentPosition();
   }
 
-  Future<void> _onTap(LatLing lating) async {
+  Future<void> _onTap(LatLng lating) async {
     final placemarks = await placemarkFromCoordinates(
       lating.latitude,
       lating.longitude,
