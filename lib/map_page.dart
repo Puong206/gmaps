@@ -25,6 +25,19 @@ class _MapPageState extends State<MapPage> {
     _setupLocation();
   }
 
+  Future<void> _setupLocation() async {
+    try {
+      final pos = await getPermission();
+      _currentPosition = pos;
+      _initialCamera = CameraPosition(
+        target: LatLng(pos.latitude, pos.longitude),
+        zoom: 16,
+      );
+
+      
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
