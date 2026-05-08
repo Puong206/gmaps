@@ -38,7 +38,12 @@ class _MapPageState extends State<MapPage> {
       final placemarks = await placemarkFromCoordinates(
         _currentPosition!.latitude,
         _currentPosition!.longitude,
-      )
+      );
+
+      final p = placemarks.first;
+      _currentAddress = '${p.name}, ${p.locality}, ${p.country}';
+
+      setState(() {});
     }
   }
 
