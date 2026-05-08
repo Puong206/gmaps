@@ -6,3 +6,17 @@ class MapPage extends StatefulWidget {
   @override
   State<MapPage> createState() => _MapPageState();
 }
+
+class _MapPageState extends State<MapPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Pilih Alamat"),
+      ),
+      body: const Center(
+        child: Text("Halaman Map"),
+      ),
+    );
+  }
+}
