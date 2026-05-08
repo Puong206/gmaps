@@ -7,7 +7,10 @@
     <application
         android:label="gmaps"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY"/> // Ganti dengan API Key Anda
         <activity
             android:name=".MainActivity"
             android:exported="true"
