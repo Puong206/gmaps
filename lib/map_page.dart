@@ -184,7 +184,31 @@ class _MapPageState extends State<MapPage> {
           ],
         ),
       ),
-      
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 8),
+          if (_pickedAddress != null)
+          FloatingActionButton.extended(
+            onPressed: _confirmSelection,
+            heroTag: "confirm",
+            label: const Text("Pilih Alamat"),
+          ),
+          const SizedBox(height: 8),
+          if (_pickedAddress != null)
+          FloatingActionButton.extended(
+            onPressed: () {
+              setState(() {
+                _pickedMarker = null;
+                _pickedAddress = null;
+              });
+            },
+            heroTag: "clear",
+            label: const Text("Hapus Alamat"),
+          )
+        ],
+      ),
     );
   }
 }
