@@ -57,6 +57,15 @@ class _MapPageState extends State<MapPage> {
     if (!await Geolocator.isLocationServiceEnabled()) {
       throw "Layanan lokasi belum aktif";
     }
+
+    LocationPermission perm = await Geolocator.checkPermission();
+    if (perm == LocationPermission.denied) {
+      perm = await Geolocator.requestPermission();
+      if (perm == LocationPermission.denied) {
+        throw "Izin lokasi ditolak";
+      }
+    }
+    return await Geolocator.getCurrentPosition();
   }
 
   @override
