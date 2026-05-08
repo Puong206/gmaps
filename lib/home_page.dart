@@ -45,7 +45,10 @@ class _HomePageState extends State<HomePage> {
                             },
                           )
                         ],
-                      )
+                      ),
+                      alamatDipilih == null
+                      ? const Text("Tidak ada alamat yang dipilih")
+                      : Text(alamatDipilih!),
                     ],
                   )
                 ],
