@@ -91,4 +91,27 @@ class _MapPageState extends State<MapPage> {
       _pickedAddress = '${p.name}, ${p.street}, ${p.locality}, ${p.country}, ${p.postalCode}';
     });
   }
+
+  void _confirmSelection() {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text("Konfirmasi Alamat"),
+        content: Text(_pickedAddress ?? ''),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text("Batal")
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.pop(context, _pickedAddress);
+            },
+            child: const Text("Pilih")
+          )
+        ],
+      )
+    );
+  }
 }
