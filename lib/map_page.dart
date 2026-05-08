@@ -166,10 +166,25 @@ class _MapPageState extends State<MapPage> {
                 ),
                 child: Text(_currentAddress ?? "Kosong"),
               ),
-            )
+            ),
+            if (_pickedAddress != null)
+              Positioned(
+                bottom: 120,
+                left: 16,
+                child: Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Text(
+                      _pickedAddress!,
+                     style: const TextStyle(fontSize: 16),
+                    ),
+                  )
+                ),
+              )
           ],
         ),
       ),
+      
     );
   }
 }
