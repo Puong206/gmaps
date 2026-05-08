@@ -44,6 +44,9 @@ class _MapPageState extends State<MapPage> {
       _currentAddress = '${p.name}, ${p.locality}, ${p.country}';
 
       setState(() {});
+    } catch (e) {
+      _initialCamera = const CameraPosition(target: LatLng(0, 0), zoom: 2);
+      setState(() {});
     }
   }
 
