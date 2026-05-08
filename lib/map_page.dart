@@ -20,6 +20,12 @@ class _MapPageState extends State<MapPage> {
   Position? _currentPosition;
 
   @override
+  void initState() {
+    super.initState();
+    _setupLocation();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
