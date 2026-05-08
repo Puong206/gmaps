@@ -47,6 +47,9 @@ class _MapPageState extends State<MapPage> {
     } catch (e) {
       _initialCamera = const CameraPosition(target: LatLng(0, 0), zoom: 2);
       setState(() {});
+      
+      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
     }
   }
 
