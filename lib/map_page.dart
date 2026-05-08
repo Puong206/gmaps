@@ -68,15 +68,5 @@ class _MapPageState extends State<MapPage> {
     return await Geolocator.getCurrentPosition();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Pilih Alamat"),
-      ),
-      body: const Center(
-        child: Text("Halaman Map"),
-      ),
-    );
-  }
+  
 }
