@@ -84,5 +84,11 @@ class _MapPageState extends State<MapPage> {
         )
       );
     });
+    final ctrl = await _ctrl.future;
+    await ctrl.animateCamera(CameraUpdate.newLatLngZoom(lating, 16));
+
+    setState(() {
+      _pickedAddress = '${p.name}, ${p.street}, ${p.locality}, ${p.country}, ${p.postalCode}';
+    });
   }
 }
