@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -10,12 +12,28 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Google Maps'),
-      ),
-      body: const Center(
-        child: Text('Google Maps will be displayed here.'),
-      ),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        
+                      )
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      )
     );
   }
 }
